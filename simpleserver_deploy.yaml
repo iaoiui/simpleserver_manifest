@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: simpleserver
+  name: simpleserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simpleserver
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: simpleserver
+    spec:
+      containers:
+      - image: iaoiui0727/simpleserver:latest
+        name: simpleserver
+        env:
+        - name: DEBUG
+          value: "true"
+        resources: {}
+status: {}
